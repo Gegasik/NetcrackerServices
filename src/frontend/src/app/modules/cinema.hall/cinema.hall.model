@@ -1,0 +1,5 @@
+export class CinemaHall {
+    idHall: number;
+    nameHall: string;
+    capacity: number;
+}

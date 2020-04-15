@@ -1,0 +1,27 @@
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Injectable} from "@angular/core";
+
+@Injectable()
+export class CinemaHall {
+    constructor(private http: HttpClient) {
+    }
+
+    getCinemaHalls(): Observable<CinemaHall[]> {
+        return this.http.get<CinemaHall[]>('http://localhost:8081/cinemaHalls');
+    }
+
+    // TODO другая вьюшка наверное
+    saveCinemaHall(cinemaHall: CinemaHall): Observable<CinemaHall> {
+        return this.http.post<CinemaHall>('/films', cinemaHall);
+    }
+
+    deleteCinemaHall(cinemaHallId: number): Observable<void> {
+        return this.http.delete<void>('/films' + CinemaHall);
+    }
+
+    // TODO другая вьюшка наверное тоже
+    getCinemaHallById(cinemaHallId: number): Observable<CinemaHall> {
+        return this.http.get<CinemaHall>('films/' + cinemaHallId);
+    }
+}

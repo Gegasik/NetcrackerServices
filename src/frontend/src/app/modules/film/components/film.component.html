@@ -1,0 +1,22 @@
+
+<button (click)="loadFilms()">Добавить</button>
+<table class="table">
+
+    <tbody>
+
+    <tr *ngFor="let SimpleViewFilm of simpleViewfilms">
+        <button mat-button >{{SimpleViewFilm.filmName}}</button>
+        <td>{{SimpleViewFilm.idFilm}}</td>
+        <!-- <td><a [routerLink]="['/billing-details', billingAccount.id]">{{billingAccount.username}}</a></td>-->
+         <td>{{SimpleViewFilm.filmName}}</td>
+         <td>{{SimpleViewFilm.filmDescriptions}}</td>
+
+     </tr>
+    </tbody>
+</table>
+<div class="form-group">
+
+
+
+</div>
+<button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="saveFilm()">re</button>
